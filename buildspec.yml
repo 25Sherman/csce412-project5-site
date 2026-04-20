@@ -4,6 +4,6 @@ phases:
   build:
     commands:
       - echo "Deploying static site to S3"
-      - aws s3 sync . s3://csce412msgrewal.me --delete --exclude ".git/*" --exclude ".github/*" --exclude "buildspec.yml" --exclude "README.md"
+      - aws s3 sync . s3://codepipeline-us-east-2-5e642dead119-4360-bcc3-38c9c02c7519 --delete --exclude ".git/*" --exclude ".github/*" --exclude "buildspec.yml" --exclude "README.md"
       - echo "Creating CloudFront invalidation"
       - aws cloudfront create-invalidation --distribution-id EYSH0ZK53JOO4 --paths "/*"
